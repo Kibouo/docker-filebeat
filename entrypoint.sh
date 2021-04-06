@@ -118,7 +118,7 @@ if [[ -z $1 ]] || [[ ${1:0:1} == '-' ]] ; then
   # geoipInfo
   waitForKibana ${KIBANA_HOST:-kibana:5601}
   echo "===> Setting up filebeat..."
-  filebeat setup --modules zeek -e -E 'setup.dashboards.enabled=true'
+  filebeat setup --modules zeek,snort -e -E 'setup.dashboards.enabled=true'
   echo "===> Starting filebeat..."
   exec filebeat "$@"
 fi

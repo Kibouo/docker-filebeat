@@ -8,9 +8,7 @@
 
 ## Why 🤔
 
-This is initially focused on supporting the [Zeek](https://github.com/elastic/beats/tree/master/x-pack/filebeat/module/zeek) filebeats module.
-
-I will add others if there is any demand or need later.
+Zeek and Snort modules enabled.
 
 ## Dependencies
 

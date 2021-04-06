@@ -14,7 +14,7 @@ filebeat.modules:
   connection:
     enabled: true
     var.paths:
-      - /pcap/conn*.log    
+      - /pcap/conn*.log
   dns:
     enabled: true
     var.paths:
@@ -35,6 +35,12 @@ filebeat.modules:
     enabled: true
     var.paths:
       - /pcap/notice*.log
+- module: snort
+  log:
+    enabled: true
+    var.input: file
+    var.paths:
+      - /pcap/
 
 processors:
 - add_cloud_metadata: ~

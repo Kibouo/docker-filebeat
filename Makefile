@@ -1,5 +1,5 @@
-REPO=blacktop/docker-filebeat
-ORG=blacktop
+REPO=Kibouo/docker-filebeat
+ORG=Kibouo
 NAME=filebeat
 BUILD ?=$(shell cat LATEST)
 LATEST ?=$(shell cat LATEST)
