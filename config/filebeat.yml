@@ -40,7 +40,7 @@ filebeat.modules:
     enabled: true
     var.input: file
     var.paths:
-      - /pcap/
+      - /pcap/alert
 
 processors:
 - add_cloud_metadata: ~
