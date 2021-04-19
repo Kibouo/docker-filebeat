@@ -35,15 +35,25 @@ filebeat.modules:
     enabled: true
     var.paths:
       - /pcap/notice*.log
-- module: snort
-  log:
-    enabled: true
-    var.input: file
-    var.paths:
-      - /pcap/alert*
+
+filebeat.inputs:
+  - type: log
+    paths:
+    - /pcap/alert_json.txt
+    json.keys_under_root: true
+    json.add_error_key: true
+    json.overwrite_keys: true
 
 processors:
 - add_cloud_metadata: ~
+- rename:
+    fields:
+    - from: "rule"
+      to: "rule.name"
+    - from: "service"
+      to: "service.name"
+    - from: "vlan"
+      to: "vlan.id"
 
 output.elasticsearch:
   hosts: '${ELASTICSEARCH_HOSTS:elasticsearch:9200}'
